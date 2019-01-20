@@ -32,10 +32,15 @@ Route::get('/', function () {
 
     $posts=\App\Post::where('id','<',10)->orderBy('id' , 'DESC')->get();
     dd($posts);
-    */
+
     $post=\App\Post::find(1);
     $post->update([
         'title'=>'updated title',
         'content'=>'updated content',
     ]);
+    */
+    $post=\App\Post::find(1);
+    $post->title='saved title';
+    $post->content='saved content';
+    $post->save();
 });
